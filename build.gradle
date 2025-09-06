@@ -11,7 +11,7 @@ apply plugin: JavaLibraryTemplatePlugin
 // Information
 
 group = 'ru.vladislav117.javalibrarytemplate'
-version = '0.0.0'
+version = project.projectVersion
 
 // Dependencies
 
@@ -29,6 +29,11 @@ dependencies {
 }
 
 // Compiling
+
+tasks.jar {
+    archiveBaseName.set(project.projectName)
+    archiveVersion.set(project.version.toString())
+}
 
 compileJava.options.encoding = "UTF-8"
 
